@@ -6,7 +6,7 @@ Answer the following questions below:
 React Router allows you to set up client-side routing in your React app so you can run a single-page application in which the browser does not request new documents from the server each time the URL changes. 
 
 - What is a single page application?
-A single page application is a website which loads as a single page without the necessity of the browser requesting additional documents from the server each time it needs to display new content. Instead, additional content and data is retrieved from the server via fetch and displayed to the user without the browser re-loading, even though the URL changes. 
+A single page application is a website which loads as a single page without the necessity of the browser requesting additional documents from the server each time it needs to display new content. Instead, additional content and data is retrieved from the server via fetch and displayed to the user by Javascript without the browser re-loading, even though the URL changes. 
 
 - What are some differences between client side and server side routing?
 In server side routing, the server provides the browser with a new HTML document for each new URL that the user visits, while in client side routing, a shell HTML file is provided on initial load of the page and the content of the page is changed dynamically by Javascript. Speed is also different. Client-side routing is sometimes slower on initial load, but much faster on all subsequent user interactions, while server-side routing is slower on each new page visited because of the necessity to request new documents from the server. 

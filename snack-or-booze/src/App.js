@@ -52,13 +52,10 @@ function App() {
 
 export default App;
 
-//answer conceptual questions
-  //the conceptual questions are completed and answered correctly
-
 //create unroll function 
-  //write tests for given examples
-  //write tests for edge cases
   //create unroll function
+  //run tests
+  //refactor unroll function
   //run tests
   //the unroll script works as expected
 
@@ -79,7 +76,7 @@ export default App;
   //the app include tests
   //a message appears for not-found pages instead of an error
   //for non-existant drinks or foods, the app redirects to the respective listing page
-  //the app allows the user to create custom cocktails and ingredients
+  //**the app allows the user to create custom cocktails and ingredients
   //the app is bug free
   //an understanding of abstracting React components to reduce code duplication is demonstrated
   //an understanding of writing efficient React code is demonstrated
