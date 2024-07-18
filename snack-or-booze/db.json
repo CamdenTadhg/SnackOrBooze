@@ -27,6 +27,27 @@
       "description": "Crisp!",
       "recipe": "Open can.",
       "serve": "Immediately."
+    },
+    {
+      "id": "kir",
+      "name": "Kir Royale",
+      "Description": "fruity champagne finery",
+      "recipe": "Mix 3 parts champagne & 1 part kirsch liqueur",
+      "serve": "serve in a fluted glass and refill often"
+    },
+    {
+      "id": "manhattan",
+      "name": "Manhattan",
+      "description": "A gentleman's beverage",
+      "recipe": "Mix 2 parts rye whiskey & 1 part sweet vermouth. Add 2 dashes bitters. ",
+      "serve": "Serve on the rocks with a suit and tie"
+    },
+    {
+      "id": "mary",
+      "name": "Bloody Mary",
+      "description": "Perfect for staining your shirt",
+      "recipe": "1 part vodka, 2 parts tomato juice, 5 drops hot sauce",
+      "serve": "serve with a celery stick"
     }
   ],
   "snacks": [
@@ -50,6 +71,13 @@
       "description": "Tart and delicious.",
       "recipe": "Mix arugula, toasted walnuts, and thinly-sliced Parmesan cheese. Dress with lemon and olive oil.",
       "serve": "Place on tiny, precious little plates."
+    },
+    {
+      "id": "cookie",
+      "name": "Chocolate Chip Cookie",
+      "description": "a childhood favorite",
+      "recipe": "go to bakery and buy chocolate chip cookies",
+      "serve": "serve perfectly centered on a plate"
     }
   ]
 }

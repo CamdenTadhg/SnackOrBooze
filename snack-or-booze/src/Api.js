@@ -9,13 +9,26 @@ const BASE_API_URL = "http://localhost:5000";
   You'll need to add to this class as you build features for the app.
 */
 
+// class SnackOrBoozeApi {
+
+//   static async getSnacks() {
+//     const result = await axios.get(`${BASE_API_URL}/snacks`);
+//     return result.data;
+//   }
+
+// }
+
 class SnackOrBoozeApi {
 
-  static async getSnacks() {
-    const result = await axios.get(`${BASE_API_URL}/snacks`);
+  static async getGoodies(type) {
+    const result = await axios.get(`${BASE_API_URL}/${type}`);
     return result.data;
   }
 
+  static async addGoodies(type, data){
+    const result = await axios.post(`${BASE_API_URL}/${type}`, data);
+    return result.data;
+  }
 }
 
 export default SnackOrBoozeApi;

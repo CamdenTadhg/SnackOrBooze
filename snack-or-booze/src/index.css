@@ -8,8 +8,10 @@ body {
   padding: 0;
   height: 100vh;
   overflow: scroll;
-  background: url(https://cdn.wallpaper.com/main/himitsu.jpg) no-repeat;
-  background-size: cover;
+  background-image: url(https://global.discourse-cdn.com/gethopscotch/original/3X/b/8/b8023210c925da0ca6ff2984c157186e829d800e.jpeg), linear-gradient(to bottom, grey, black);
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, left;
+  background-size: contain, cover;
 }
 
 code {
