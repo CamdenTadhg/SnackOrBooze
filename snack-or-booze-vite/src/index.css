@@ -1,0 +1,20 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: scroll;
+  background-image: url(https://global.discourse-cdn.com/gethopscotch/original/3X/b/8/b8023210c925da0ca6ff2984c157186e829d800e.jpeg), linear-gradient(to bottom, grey, black);
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, left;
+  background-size: contain, cover;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

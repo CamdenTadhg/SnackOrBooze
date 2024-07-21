@@ -78,13 +78,6 @@
       "description": "a childhood favorite",
       "recipe": "go to bakery and buy chocolate chip cookies",
       "serve": "serve perfectly centered on a plate"
-    },
-    {
-      "id": "chipscheese",
-      "name": "Chips & Cheese",
-      "description": "chips with melted cheese",
-      "recipe": "Put chips on page. Add cheese. Bake",
-      "serve": "serve with salsa"
     }
   ]
 }
