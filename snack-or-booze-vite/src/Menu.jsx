@@ -11,8 +11,9 @@ import {
 } from "reactstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
+//renders snack or drink menu component
 function Menu({ items, type }) {
+  //capitalize the "type" variable for the card title
   const capitalize = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }

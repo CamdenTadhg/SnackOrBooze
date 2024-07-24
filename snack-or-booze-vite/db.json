@@ -78,6 +78,13 @@
       "description": "a childhood favorite",
       "recipe": "go to bakery and buy chocolate chip cookies",
       "serve": "serve perfectly centered on a plate"
+    },
+    {
+      "id": "chipsandcheese",
+      "name": "Chips & Cheese",
+      "description": "The most basic form of nachos",
+      "recipe": "Scatter chips on a tray. Cover with shredded cheese. Bake",
+      "serve": "serve with salsa"
     }
   ]
 }

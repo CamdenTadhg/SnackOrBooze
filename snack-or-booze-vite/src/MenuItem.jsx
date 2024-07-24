@@ -3,11 +3,13 @@ import { Navigate, useParams } from "react-router-dom";
 import { Card, CardBody, CardTitle, CardText } from "reactstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-function FoodItem({ items, cantFind }) {
+//component renders the details of a specific snack or drink
+function MenuItem({ items, cantFind }) {
   const { id } = useParams();
 
+  //find item matching the url parameter
   let item = items.find(item => item.id === id);
+  //if item does not exist, send back to snacks list or drinks list respectively
   if (!item) return <Navigate to={cantFind} />;
 
   return (
@@ -30,4 +32,4 @@ function FoodItem({ items, cantFind }) {
   );
 }
 
-export default FoodItem;
+export default MenuItem;

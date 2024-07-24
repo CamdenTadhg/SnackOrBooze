@@ -11,19 +11,21 @@ import AddForm from './AddForm';
 import NotFound from './NotFound';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
+//renders loading screen if loading, else renders app. 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [snacks, setSnacks] = useState([]);
   const [drinks, setDrinks] = useState([]);
 
   useEffect(() => {
+    //get the list of snacks from the API and set state appropriately
     async function getSnacks() {
       setIsLoading(true);
       let snacks = await SnackOrBoozeApi.getGoodies('snacks');
       setSnacks(snacks);
       setIsLoading(false);
     }
+    //get the list of drinks from the API and set state appropriately
     async function getDrinks() {
       setIsLoading(true);
       let drinks = await SnackOrBoozeApi.getGoodies('drinks');
@@ -61,15 +63,19 @@ function App() {
 export default App;
 
 //create Snack or Booze website
-  //Write tests
-    //write snapshot tests
-    //write api tests
-    //write event tests
-  //Document code
-    //go through and make sure each function has a comment
-    //make sure each component has at least 3 comments
+  //move beforeEach back into app.test.jsx
+  //write api tests
   //fix styling
-  //Refactor app using good design
-    //you may already have done this, but give it another look
+  //Write tests
+    //write additional tests for each component
+      //Menu
+      //MenuItem
+      //AddForm
+    //fix tests to render actual component, instead of app home
+    //fix snapshot tests
+      //App
+      //Home
+      //Menu
+      //MenuItem
+      //NavBar
 
-  //the app include tests

@@ -1,8 +1,9 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import { Card, CardBody, CardTitle, CardText, ListGroup, ListGroupItem} from "reactstrap";
+import { Card, CardBody, CardTitle, ListGroup, ListGroupItem} from "reactstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+//renders home page of app
 function Home({snacks, drinks}) {
   return (
     <section className="col-md-8">
@@ -13,7 +14,6 @@ function Home({snacks, drinks}) {
               Welcome to Silicon Valley's premier dive cafe!
             </h5>
           </CardTitle>
-          <CardText>
             <ListGroup>
               <Link to={'/snacks'}>
                 <ListGroupItem>Snacks: {snacks.length}</ListGroupItem>
@@ -22,7 +22,6 @@ function Home({snacks, drinks}) {
                 <ListGroupItem>Drinks: {drinks.length}</ListGroupItem>
               </Link>
             </ListGroup>
-          </CardText>
         </CardBody>
       </Card>
     </section>

@@ -1,6 +1,5 @@
 import React from 'react';
 import {Card, CardBody} from 'reactstrap';
-// import '.NotFound.css';
 
 function NotFound() {
     return (

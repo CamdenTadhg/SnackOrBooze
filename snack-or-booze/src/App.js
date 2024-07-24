@@ -74,16 +74,6 @@ export default App;
 
 //create Snack or Booze website
   //Write tests
-    //write smoke tests
-    //write snapshot tests
-    //write api tests
-    //write event tests
-  //Document code
-    //go through and make sure each function has a comment
-    //make sure each component has at least 3 comments
-  //Refactor app using good design
-    //you may already have done this, but give it another look
-
-  //the app include tests
-  //a message appears for not-found pages instead of an error
-  //the app is bug free
+    //write api tests (mocking)
+    //write content tests (mocking)
+    //write event tests (mocking)

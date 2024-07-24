@@ -4,8 +4,9 @@ import SnackOrBoozeApi from "./Api";
 import './AddForm.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
+//Component renders form to create new snacks and drinks in the database
 function AddForm({setSnacks, setDrinks}) {
+    //set initial state for form
     const initialState = {
         type: 'snacks',
         id: '',
@@ -15,14 +16,16 @@ function AddForm({setSnacks, setDrinks}) {
         serve: ''
     }
     const [formData, setFormData] = useState(initialState);
+    //handle change to form entries
     const handleChange = (event) => {
         const {name, value} = event.target;
         setFormData(fData => ({
             ...fData,
             [name]: value
         }));
-    }
-
+    };
+    
+    //handle form submission. Create a new snack or drink and get the updated list
     const handleSubmit = async (event) => {
         event.preventDefault();
         const {type, id, name, description, recipe, serve} = formData;
