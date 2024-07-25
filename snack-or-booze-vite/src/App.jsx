@@ -63,19 +63,4 @@ function App() {
 export default App;
 
 //create Snack or Booze website
-  //move beforeEach back into app.test.jsx
-  //write api tests
-  //fix styling
-  //Write tests
-    //write additional tests for each component
-      //Menu
-      //MenuItem
-      //AddForm
-    //fix tests to render actual component, instead of app home
-    //fix snapshot tests
-      //App
-      //Home
-      //Menu
-      //MenuItem
-      //NavBar
-
+//fix styling

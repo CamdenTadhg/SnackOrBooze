@@ -1,7 +1,7 @@
+import React, {useParams} from 'react';
 import {render} from '@testing-library/react';
-import {expect, test} from 'vitest';
+import {expect, test, vi} from 'vitest';
 import MenuItem from '../MenuItem';
-import App from '../App';
 
 const items = [
     {
@@ -21,18 +21,40 @@ const items = [
 ];
 
 test('renders the MenuItem component', () => {
-    render(
-        <App >
-            <MenuItem items={items}/>
-        </App>
-    );
+    render(<MenuItem items={items} cantFind='/snacks'/>);
 });
 
 test('matches snapshot', () => {
-    const menuItem = render(
-        <App >
-            <MenuItem items={items}/>
-        </App>
-    );
+    const menuItem = render(<MenuItem items={items} cantFind='/snacks'/>);
     expect(menuItem).toMatchSnapshot();
+})
+
+test('displays the correct content if found', function() {
+  let mockParam = {id: 'nachos'};
+
+  vi.mock('react-router-dom', () => ({
+    ...vi.requireActual('react-router-dom'),
+    useParams: () => mockParam
+  }));
+
+  const {getByText} = render(<MenuItem items={items} cantFind='/snacks'/>);
+  expect(getByText('Recipe: Cover expensive, organic tortilla chips with Cheez Whiz.')).toBeInTheDocument();
+});
+
+test('redirects if item is not found', function() {
+  let mockParam = {id: 'chips'};
+
+  vi.mock('react-router-dom', () => ({
+    ...vi.requireActual('react-router-dom'),
+    useParams: () => mockParam
+  }));
+
+  vi.mock('react-router-dom', () => {
+    return {
+      Redirect: vi.fn(({to}) => `Redirected to ${to}`),
+    };
+  });
+
+  const {getByText} = render(<MenuItem items={items} cantFind='/snacks'/>);
+  expect(getByText('Redirected to /snacks')).toBeInTheDocument();
 })

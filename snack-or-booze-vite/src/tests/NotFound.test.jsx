@@ -3,7 +3,7 @@ import {expect, test} from 'vitest';
 import NotFound from '../NotFound';
 
 test('renders NotFound component', () => {
-    render(<NotFound />)
+    render(<NotFound />);
 });
 
 test('matches snapshot', () => {
@@ -13,6 +13,5 @@ test('matches snapshot', () => {
 
 test('renders the right content', () => {
     render(<NotFound />);
-
     expect(screen.getByText(/We're sorry./i)).toBeInTheDocument();
 })

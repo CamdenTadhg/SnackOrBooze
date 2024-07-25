@@ -1,7 +1,6 @@
-import {render, screen, act} from '@testing-library/react';
+import {render} from '@testing-library/react';
 import {expect, test} from 'vitest';
 import Menu from '../Menu';
-import App from '../App';
 
 const items = [    {
   "id": "nachos",
@@ -19,27 +18,15 @@ const items = [    {
 }];
 
 test('renders the Menu component', () => {
-    render(
-        <App >
-            <Menu type='snacks' items={items}/>
-        </App>
-    );
+    render(<Menu items={items} type='snacks'/>);
 });
 
 test('matches snapshot', () => {
-  const menu = render(
-    <App >
-        <Menu type='snacks' items={items}/>
-    </App>
-  );
+  const menu = render(<Menu items={items} type='snacks'/>);
   expect(menu).toMatchSnapshot();
 });
 
-test('renders the correct content', async () => {
-  await act(async () => {render(
-    <App>
-      <Menu type='snacks'/>
-    </App>
-  )});
-  expect(screen.getByText(/Snacks Menu/i)).toBeInTheDocument();
+test('renders the correct content', () => {
+  const {getByText} = reander(<Menu items={items} type='snacks'/>);
+  expect(getByText(/Snacks Menu/i)).toBeInTheDocument();
 })

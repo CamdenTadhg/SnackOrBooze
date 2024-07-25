@@ -1,27 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {fireEvent, render} from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import AddForm from "../AddForm";
 import SnackOrBoozeApi from '../Api';
 
 jest.mock(SnackOrBoozeApi);
+const [snacks, setSnacks] = useState([]);
+const [drinks, setDrinks] = useState([]);
 
 it("renders without crashing", function() {
-    render(<AddForm />);
+    render(<AddForm setSnacks={setSnacks} setDrinks={setDrinks}/>);
 });
 
 it("matches snapshot", function() {
-    const {asFragment} = render(<AddForm />);
+    const {asFragment} = render(<AddForm setSnacks={setSnacks} setDrinks={setDrinks}/>);
     expect(asFragment()).toMatchSnapshot();
 });
 
 it('displays the correct content', function() {
-    const {getByText} = render(<AddForm />)
+    const {getByText} = render(<AddForm setSnacks={setSnacks} setDrinks={setDrinks}/>)
     expect(getByText('Add A Menu Item', {exact: false})).toBeInTheDocument();
 });
 
 it('gathers and submits form data', function() {
-    const {getByText, getByPlaceholderText} = render(<AddForm />);
+    const {getByText, getByPlaceholderText} = render(<AddForm setSnacks={setSnacks} setDrinks={setDrinks}/>);
     fireEvent.change(getByPlaceholderText('id'), {target: {value: 'chips'}});
     fireEvent.change(getByPlaceholderText('name'), {target: {value: 'Chips'}});
     fireEvent.change(getByPlaceholderText('description'), {target: {value: 'test description'}});

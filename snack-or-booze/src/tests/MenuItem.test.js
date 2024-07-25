@@ -1,31 +1,32 @@
-import React from 'react';
+import React, {useParams} from 'react';
 import {render} from '@testing-library/react';
 import MenuItem from "../MenuItem";
 
+const items = [    {
+    "id": "nachos",
+    "name": "Nachos",
+    "description": "An American classic!",
+    "recipe": "Cover expensive, organic tortilla chips with Cheez Whiz.",
+    "serve": "Serve in a hand-thrown ceramic bowl, garnished with canned black olives"
+  },
+  {
+    "id": "hummus",
+    "name": "Hummus",
+    "description": "Sure to impress your vegan friends!",
+    "recipe": "Purchase one container of hummus.",
+    "serve": "Place unceremoniously on the table, along with pita bread."
+  }];
+
 it("renders without crashing", function() {
-    render(<MenuItem />);
+    render(<MenuItem items={items} cantFind='/snacks'/>);
 });
 
 it("matches snapshot", function() {
-    const {asFragment} = render(<MenuItem />);
+    const {asFragment} = render(<MenuItem items={items} cantFind='/snacks'/>);
     expect(asFragment()).toMatchSnapshot();
 });
 
 it('displays the correct content if item is found', function() {
-    const items = [    {
-        "id": "nachos",
-        "name": "Nachos",
-        "description": "An American classic!",
-        "recipe": "Cover expensive, organic tortilla chips with Cheez Whiz.",
-        "serve": "Serve in a hand-thrown ceramic bowl, garnished with canned black olives"
-      },
-      {
-        "id": "hummus",
-        "name": "Hummus",
-        "description": "Sure to impress your vegan friends!",
-        "recipe": "Purchase one container of hummus.",
-        "serve": "Place unceremoniously on the table, along with pita bread."
-      }];
 
     let mockParam = {id: 'nachos'};
 
@@ -39,20 +40,6 @@ it('displays the correct content if item is found', function() {
 });
 
 it('redirects if item is not found', function() {
-    const items = [    {
-        "id": "nachos",
-        "name": "Nachos",
-        "description": "An American classic!",
-        "recipe": "Cover expensive, organic tortilla chips with Cheez Whiz.",
-        "serve": "Serve in a hand-thrown ceramic bowl, garnished with canned black olives"
-      },
-      {
-        "id": "hummus",
-        "name": "Hummus",
-        "description": "Sure to impress your vegan friends!",
-        "recipe": "Purchase one container of hummus.",
-        "serve": "Place unceremoniously on the table, along with pita bread."
-      }];
 
     let mockParam = {id: 'chips'};
 

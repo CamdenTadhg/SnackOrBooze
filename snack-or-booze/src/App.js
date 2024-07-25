@@ -73,11 +73,5 @@ function App() {
 export default App;
 
 //create Snack or Booze website
+  //add props to tests
   //get tests running
-//Rewrite tests on Vite version
-  //write smoke tests
-  //write snapshop tests
-  //write api tests
-  //write content tests
-  //write event tests
-//Fix styling on vite version

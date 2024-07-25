@@ -3,11 +3,13 @@ import '@testing-library/jest-dom/vitest';
 import axios from 'axios';
 import {beforeEach, test, vi, expect} from 'vitest';
 
-vi.mock('axios');
 
-beforeEach(() => {
-    axios.get.mockClear();
-    const snacks = {data: [    {
+
+test('gets snacks data', async () => {
+
+  vi.mock('axios');
+  axios.get.mockClear();
+  const snacks = {data: [    {
         "id": "nachos",
         "name": "Nachos",
         "description": "An American classic!",
@@ -28,32 +30,34 @@ beforeEach(() => {
         "recipe": "Mix arugula, toasted walnuts, and thinly-sliced Parmesan cheese. Dress with lemon and olive oil.",
         "serve": "Place on tiny, precious little plates."
       }]};
-    const drinks = {data: [    {
-        "id": "martini",
-        "name": "Martini",
-        "description": "An ice-cold, refreshing classic.",
-        "recipe": "Mix 3 parts vodka & 1 part dry vermouth.",
-        "serve": "Serve very cold, straight up."
-      },
-      {
-        "id": "negroni",
-        "name": "Negroni",
-        "description": "A nice drink for a late night conversation.",
-        "recipe": "Mix equal parts of gin, Campari, and sweet vermouth.",
-        "serve": "Serve cold, either on the rocks or straight up."
-      }]};
-      axios.get.mockResolvedValueOnce(snacks);
-      axios.get.mockResolvedValueOnce(drinks);
+  axios.get.mockResolvedValueOnce(snacks);
+
+  const results = await SnackOrBoozeApi.getGoodies('snacks');
+  expect(results.length).toBe(3);
 });
 
-test('gets snacks data', async () => {
-    const results = await SnackOrBoozeApi.getGoodies('snacks');
-    expect(results.length).toBe(3);
+test('adds data to database', async () => {
+  const result1 = await SnackOrBoozeApi.addGoodies('snacks',{
+    id:'mixednuts',
+    name: 'Mixed Nuts',
+    description: 'Just about all the nuts you could ever want',
+    recipe: 'Mix together at least 5 kinds of nut. Sprinkle with excessive amounts of salt',
+    serve: "Serve in a bowl that hasn't been cleaned in a week"
+  }); 
+  expect(result1).toEqual({
+    id:'mixednuts',
+    name: 'Mixed Nuts',
+    description: 'Just about all the nuts you could ever want',
+    recipe: 'Mix together at least 5 kinds of nut. Sprinkle with excessive amounts of salt',
+    serve: "Serve in a bowl that hasn't been cleaned in a week"
+  })
+  const result2 = await SnackOrBoozeApi.getGoodies('snacks');
+  expect(result2).toEqual(
+    expect.arrayContaining([{            
+      id:'mixednuts',
+      name: 'Mixed Nuts',
+      description: 'Just about all the nuts you could ever want',
+      recipe: 'Mix together at least 5 kinds of nut. Sprinkle with excessive amounts of salt',
+      serve: "Serve in a bowl that hasn't been cleaned in a week"}])
+  );
 });
-
-test('gets drinks data', async () => {
-    const results = await SnackOrBoozeApi.getGoodies('drinks');
-    expect(results.length).toBe(2);
-})
-
-//post returns the data entered. 

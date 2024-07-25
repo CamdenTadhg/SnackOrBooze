@@ -49,8 +49,8 @@ test('it matches snapshot', async () => {
 });
 
 test('it displays loading message', () => {
-    render(<App />);
-    expect(screen.getByText(/Loading/i)).toBeInTheDocument();
+    const {getByText} = render(<App />);
+    expect(getByText('Loading', {exact:false})).toBeInTheDocument();
 });
 
 test('fetches and displays api data', async () => {
