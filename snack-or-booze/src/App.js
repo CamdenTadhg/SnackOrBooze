@@ -73,5 +73,12 @@ function App() {
 export default App;
 
 //create Snack or Booze website
-  //add props to tests
   //get tests running
+    //Menu.test.js
+    //NavBar.test.js
+    //NotFound.test.js
+    //Home.test.js
+    //App.test.js
+    //AddForm.test.js
+    //MenuItem.test.js
+    //Api.test.js

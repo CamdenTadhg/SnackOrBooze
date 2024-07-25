@@ -1,6 +1,7 @@
 import React from 'react';
 import {render} from '@testing-library/react';
 import Menu from "../Menu";
+import {MemoryRouter} from 'react-router-dom';
 
 const items = [    {
   "id": "nachos",
@@ -18,18 +19,27 @@ const items = [    {
 }];
 
 it("renders without crashing", function() {
-    render(<Menu items={items} type='snacks'/>);
+    render(
+    <MemoryRouter>
+      <Menu items={items} type='snacks'/>
+    </MemoryRouter>);
 });
 
 it("matches snapshot", function() {
-    const {asFragment} = render(<Menu items={items} type='snacks'/>);
+    const {asFragment} = render(
+      <MemoryRouter>
+        <Menu items={items} type='snacks'/>
+      </MemoryRouter>);
     expect(asFragment()).toMatchSnapshot();
 });
 
 it('displays the correct content', function() {
 
     
-    const {getByText} = render(<Menu items={items} type="snacks"/>);
-    expect(getByText('Snack Menu', {exact: false})).toBeInTheDocument();
+    const {getByText} = render(
+      <MemoryRouter>
+        <Menu items={items} type="snacks"/>
+      </MemoryRouter>);
+    expect(getByText(/Snacks/, {exact: false})).toBeInTheDocument();
     expect(getByText('Hummus', {exact: false})).toBeInTheDocument();
 });

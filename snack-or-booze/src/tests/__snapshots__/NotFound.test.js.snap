@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <section>
+    <div
+      class="card"
+    >
+      <div
+        class="card-body"
+      >
+        We're sorry. That page doesn't exist.
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
