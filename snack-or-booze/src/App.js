@@ -74,7 +74,6 @@ export default App;
 
 //create Snack or Booze website
   //get tests running
-    //NavBar.test.js
     //NotFound.test.js
     //Home.test.js
     //App.test.js
