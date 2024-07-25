@@ -8,11 +8,8 @@ function Home({snacks, drinks}) {
       <Card>
         <CardBody className="text-center">
           <CardTitle>
-            <h5 className="font-weight-bold">
               Welcome to Silicon Valley's premier dive cafe!
-            </h5>
           </CardTitle>
-          <CardText>
             <ListGroup>
               <Link to={'/snacks'}>
                 <ListGroupItem>Snacks: {snacks.length}</ListGroupItem>
@@ -21,7 +18,6 @@ function Home({snacks, drinks}) {
                 <ListGroupItem>Drinks: {drinks.length}</ListGroupItem>
               </Link>
             </ListGroup>
-          </CardText>
         </CardBody>
       </Card>
     </section>
