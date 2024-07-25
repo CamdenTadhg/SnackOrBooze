@@ -74,6 +74,12 @@ export default App;
 
 //create Snack or Booze website
   //Write tests
-    //write api tests (mocking)
-    //write content tests (mocking)
-    //write event tests (mocking)
+    //write content tests
+    //write event tests
+//Rewrite tests on Vite version
+  //write smoke tests
+  //write snapshop tests
+  //write api tests
+  //write content tests
+  //write event tests
+//Fix styling on vite version

@@ -10,3 +10,7 @@ it("matches snapshot", function() {
     const {asFragment} = render(<Menu />);
     expect(asFragment()).toMatchSnapshot();
 });
+
+it('displays the correct content', function() {
+    
+})
