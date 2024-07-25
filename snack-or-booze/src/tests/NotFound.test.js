@@ -10,3 +10,8 @@ it("matches snapshot", function() {
     const {asFragment} = render(<NotFound />);
     expect(asFragment()).toMatchSnapshot();
 });
+
+it('displays the correct content', function() {
+    const {getByText} = render(<NotFound />);
+    expect(getByText("We're sorry.", {exact: false})).toBeInTheDocument();
+})

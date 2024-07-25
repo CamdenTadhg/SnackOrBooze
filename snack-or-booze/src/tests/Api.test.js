@@ -1,7 +1,6 @@
 import React from 'react';
 import SnackOrBoozeApi from '../Api';
 import axios from 'axios';
-import { expect } from 'chai';
 
 it('should return appropriate data from a get call', async () => {
     const result = await SnackOrBoozeApi.getGoodies('snacks');

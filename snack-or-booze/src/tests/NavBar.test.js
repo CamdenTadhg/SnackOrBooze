@@ -10,3 +10,8 @@ it("matches snapshot", function() {
     const {asFragment} = render(<NavBar />);
     expect(asFragment()).toMatchSnapshot();
 });
+
+it('displays the correct content', function() {
+    const {getByText} = render(<NavBar />);
+    expect(getByText('Snack or Booze', {exact: false})).toBeInTheDocument();
+})
