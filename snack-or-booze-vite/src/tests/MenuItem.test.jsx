@@ -2,6 +2,7 @@ import React, {useParams} from 'react';
 import {render} from '@testing-library/react';
 import {expect, test, vi} from 'vitest';
 import MenuItem from '../MenuItem';
+import {MemoryRouter} from 'react-router-dom';
 
 const items = [
     {
@@ -21,11 +22,17 @@ const items = [
 ];
 
 test('renders the MenuItem component', () => {
-    render(<MenuItem items={items} cantFind='/snacks'/>);
+    render(
+      <MemoryRouter>
+        <MenuItem items={items} cantFind='/snacks'/>
+      </MemoryRouter>);
 });
 
 test('matches snapshot', () => {
-    const menuItem = render(<MenuItem items={items} cantFind='/snacks'/>);
+    const menuItem = render(
+      <MemoryRouter>
+        <MenuItem items={items} cantFind='/snacks'/>
+      </MemoryRouter>);
     expect(menuItem).toMatchSnapshot();
 })
 
@@ -37,7 +44,10 @@ test('displays the correct content if found', function() {
     useParams: () => mockParam
   }));
 
-  const {getByText} = render(<MenuItem items={items} cantFind='/snacks'/>);
+  const {getByText} = render(
+    <MemoryRouter>
+      <MenuItem items={items} cantFind='/snacks'/>
+    </MemoryRouter>);
   expect(getByText('Recipe: Cover expensive, organic tortilla chips with Cheez Whiz.')).toBeInTheDocument();
 });
 
@@ -55,6 +65,9 @@ test('redirects if item is not found', function() {
     };
   });
 
-  const {getByText} = render(<MenuItem items={items} cantFind='/snacks'/>);
+  const {getByText} = render(
+    <MemoryRouter>
+      <MenuItem items={items} cantFind='/snacks'/>
+    </MemoryRouter>);
   expect(getByText('Redirected to /snacks')).toBeInTheDocument();
 })

@@ -37,7 +37,7 @@ test('gets snacks data', async () => {
 });
 
 test('adds data to database', async () => {
-  const result1 = await SnackOrBoozeApi.addGoodies('snacks',{
+  const result1 = await SnackOrBoozeApi.addGoodies('snacks', {
     id:'mixednuts',
     name: 'Mixed Nuts',
     description: 'Just about all the nuts you could ever want',

@@ -85,6 +85,48 @@
       "description": "The most basic form of nachos",
       "recipe": "Scatter chips on a tray. Cover with shredded cheese. Bake",
       "serve": "serve with salsa"
+    },
+    {
+      "id": "chips",
+      "name": "Chips",
+      "description": "test description",
+      "recipe": "test recipe",
+      "serve": "test serve"
+    },
+    {
+      "id": "chips",
+      "name": "Chips",
+      "description": "test description",
+      "recipe": "test recipe",
+      "serve": "test serve"
+    },
+    {
+      "id": "chips",
+      "name": "Chips",
+      "description": "test description",
+      "recipe": "test recipe",
+      "serve": "test serve"
+    },
+    {
+      "id": "chips",
+      "name": "Chips",
+      "description": "test description",
+      "recipe": "test recipe",
+      "serve": "test serve"
+    },
+    {
+      "id": "chips",
+      "name": "Chips",
+      "description": "test description",
+      "recipe": "test recipe",
+      "serve": "test serve"
+    },
+    {
+      "id": "chips",
+      "name": "Chips",
+      "description": "test description",
+      "recipe": "test recipe",
+      "serve": "test serve"
     }
   ]
 }

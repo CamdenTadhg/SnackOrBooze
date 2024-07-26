@@ -1,6 +1,8 @@
 import {render} from '@testing-library/react';
 import {expect, test} from 'vitest';
 import Menu from '../Menu';
+import {MemoryRouter} from 'react-router-dom';
+
 
 const items = [    {
   "id": "nachos",
@@ -18,15 +20,24 @@ const items = [    {
 }];
 
 test('renders the Menu component', () => {
-    render(<Menu items={items} type='snacks'/>);
+    render(
+      <MemoryRouter>
+        <Menu items={items} type='snacks'/>
+      </MemoryRouter>);
 });
 
 test('matches snapshot', () => {
-  const menu = render(<Menu items={items} type='snacks'/>);
+  const menu = render(
+    <MemoryRouter>
+      <Menu items={items} type='snacks'/>
+    </MemoryRouter>);
   expect(menu).toMatchSnapshot();
 });
 
 test('renders the correct content', () => {
-  const {getByText} = reander(<Menu items={items} type='snacks'/>);
+  const {getByText} = render(
+    <MemoryRouter>
+      <Menu items={items} type='snacks'/>
+    </MemoryRouter>);
   expect(getByText(/Snacks Menu/i)).toBeInTheDocument();
 })

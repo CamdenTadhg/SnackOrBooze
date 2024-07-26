@@ -5,15 +5,101 @@ exports[`matches snapshot 1`] = `
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <p>
-        Loading …
-      </p>
+      <section
+        class="col-md-4"
+      >
+        <div
+          class="card"
+        >
+          <div
+            class="card-body"
+          >
+            <div
+              class="font-weight-bold text-center card-title"
+            >
+              Snacks
+               Menu
+            </div>
+            <p
+              class="card-text"
+            >
+              Our delicious 
+              snacks
+            </p>
+            <ul
+              class="list-group"
+            >
+              <a
+                href="/snacks/nachos"
+              >
+                <li
+                  class="list-group-item"
+                >
+                  Nachos
+                </li>
+              </a>
+              <a
+                href="/snacks/hummus"
+              >
+                <li
+                  class="list-group-item"
+                >
+                  Hummus
+                </li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </section>
     </div>
   </body>,
   "container": <div>
-    <p>
-      Loading …
-    </p>
+    <section
+      class="col-md-4"
+    >
+      <div
+        class="card"
+      >
+        <div
+          class="card-body"
+        >
+          <div
+            class="font-weight-bold text-center card-title"
+          >
+            Snacks
+             Menu
+          </div>
+          <p
+            class="card-text"
+          >
+            Our delicious 
+            snacks
+          </p>
+          <ul
+            class="list-group"
+          >
+            <a
+              href="/snacks/nachos"
+            >
+              <li
+                class="list-group-item"
+              >
+                Nachos
+              </li>
+            </a>
+            <a
+              href="/snacks/hummus"
+            >
+              <li
+                class="list-group-item"
+              >
+                Hummus
+              </li>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </section>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

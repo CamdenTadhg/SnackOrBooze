@@ -1,7 +1,9 @@
 module.exports = {
-    preset: 'ts-jest/presets/js-with-ts',
+    preset: 'ts-jest',
     testEnvironment: 'jsdom',
-    transform: {'^.+\\.jsx?$': 'babel-jest',},
+    transform: {    
+        '^.+\\.(ts|tsx)?$': 'ts-jest',
+        '^.+\\.(js|jsx)$': 'babel-jest',},
     transformIgnorePatterns: ['/node_modules/(?!axios/)'],
     globals: { 'babel-jest': { useESM: true, }},
 };

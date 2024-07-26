@@ -27,5 +27,5 @@ it('displays the correct content', function () {
 
     const {getByText} = render(<App />);
     expect(getByText('Snacks: 5', {exact: false})).toBeInDocument();
-    expect(getByText('Drinks:7', {exact: false})).toBeInDocument();
+    expect(getByText('Drinks: 7', {exact: false})).toBeInDocument();
 });

@@ -1,28 +1,29 @@
-import {render} from '@testing-library/react';
+import React from 'react';
+import {render, fireEvent, findByPlaceholderText} from '@testing-library/react';
 import {test, expect, vi} from 'vitest';
 import AddForm from '../AddForm';
 import SnackOrBoozeApi from '../Api';
 
-vi.mock(SnackOrBoozeApi);
-const [snacks, setSnacks] = useState([]);
-const [drinks, setDrinks] = useState([]);
+vi.doMock('SnackOrBoozeApi');
 
 test('renders the AddForm component', () => {
-    render(<AddForm setSnacks={setSnacks} setDrinks={setDrinks}/>);
+    render(<AddForm />);
 });
 
 test('matches snapshot', function() {
-    const addForm = render(<AddForm setSnacks={setSnacks} setDrinks={setDrinks}/>);
+    const addForm = render(<AddForm />);
     expect(addForm).toMatchSnapshot();
 });
 
 test('displays correct content', function() {
-    const {getByText} = render(<AddForm setSnacks={setSnacks} setDrinks={setDrinks}/>);
+    const {getByText} = render(<AddForm />);
     expect(getByText('Add A Menu Item')).toBeInTheDocument();
 });
 
 test('gathers and submits form data', function() {
-    const {getByText, getByPlaceholderText} = render(<AddForm setSnacks={setSnacks} setDrinks={setDrinks}/>);
+    const spyAdd = vi.spyOn(SnackOrBoozeApi, 'addGoodies');
+    const spyGet = vi.spyOn(SnackOrBoozeApi, 'getGoodies');
+    const {getByText, getByPlaceholderText} = render(<AddForm />);
     fireEvent.change(getByPlaceholderText('id'), {target: {value: 'chips'}});
     fireEvent.change(getByPlaceholderText('name'), {target: {value: 'Chips'}});
     fireEvent.change(getByPlaceholderText('description'), {target: {value: 'test description'}});
@@ -37,7 +38,9 @@ test('gathers and submits form data', function() {
         recipe: 'test recipe', 
         serve: 'test serve'
     });
+
     expect(SnackOrBoozeApi.getGoodies).toHaveBeenNthCalledWith(1, 'snacks');
     expect(SnackOrBoozeApi.getGoodies).toHaveBeenNthCalledWith(2, 'drinks');
-    expect(getByPlaceholderText('id').val()).toEqual('');
+    const idInput = getByPlaceholderText('id')
+    expect(idInput.value).toEqual('');
 })

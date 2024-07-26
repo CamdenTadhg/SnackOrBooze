@@ -4,7 +4,7 @@ import App from '../App';
 import SnackOrBoozeApi from '../Api';
 
 //mock the api call to gather appropriate data
-vi.mock('../Api');
+vi.doMock('SnackOrBoozeApi');
 
 SnackOrBoozeApi.getGoodies = vi.fn();
 
@@ -49,7 +49,12 @@ test('it matches snapshot', async () => {
 });
 
 test('it displays loading message', () => {
-    const {getByText} = render(<App />);
+  let getByText;
+
+  act(() => {
+    const utils = render(<App />);
+    getByText = utils.getByText;
+  })
     expect(getByText('Loading', {exact:false})).toBeInTheDocument();
 });
 
