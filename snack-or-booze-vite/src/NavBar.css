@@ -31,12 +31,17 @@ nav {
   
   nav a.active.navbar-brand {
     border-bottom: none;
+    color: white;
   }
   
   nav a:not(.navbar-brand):hover {
     font-weight: bold;
   }
   
-  #NavBar #NavBar-NavBar{
-    width: 100%;
-  }
+nav a.navbar-brand{
+  color: white;
+}
+
+nav a.navbar-brand:hover{
+  color: white;
+}

@@ -64,11 +64,8 @@ export default App;
 
 //create Snack or Booze website
 //get tests running
-  //AddForm.test.jsx
+
   //App.test.jsx
   //Api.test.jsx
   //MenuItem.test.jsx
-//fix styling
-  //fix color on logo
-  //fix card location
-  //fix color on card
+

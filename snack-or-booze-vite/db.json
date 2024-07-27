@@ -92,41 +92,6 @@
       "description": "test description",
       "recipe": "test recipe",
       "serve": "test serve"
-    },
-    {
-      "id": "chips",
-      "name": "Chips",
-      "description": "test description",
-      "recipe": "test recipe",
-      "serve": "test serve"
-    },
-    {
-      "id": "chips",
-      "name": "Chips",
-      "description": "test description",
-      "recipe": "test recipe",
-      "serve": "test serve"
-    },
-    {
-      "id": "chips",
-      "name": "Chips",
-      "description": "test description",
-      "recipe": "test recipe",
-      "serve": "test serve"
-    },
-    {
-      "id": "chips",
-      "name": "Chips",
-      "description": "test description",
-      "recipe": "test recipe",
-      "serve": "test serve"
-    },
-    {
-      "id": "chips",
-      "name": "Chips",
-      "description": "test description",
-      "recipe": "test recipe",
-      "serve": "test serve"
     }
   ]
 }
