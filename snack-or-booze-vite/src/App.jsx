@@ -20,25 +20,25 @@ function App() {
   useEffect(() => {
     //get the list of snacks from the API and set state appropriately
     async function getSnacks() {
+      console.log('starting getSnacks');
       setIsLoading(true);
       let loadSnacks = await SnackOrBoozeApi.getGoodies('snacks');
-      console.log('loadSnacks is ', loadSnacks);
+      console.log('getSnacks data returned')
       setSnacks(loadSnacks);
-      console.log('snacks is ', snacks);
       setIsLoading(false);
     }
     //get the list of drinks from the API and set state appropriately
     async function getDrinks() {
+      console.log('starting getDrinks');
       setIsLoading(true);
       let loadDrinks = await SnackOrBoozeApi.getGoodies('drinks');
+      console.log('getDRinks data returned');
       setDrinks(loadDrinks);
       setIsLoading(false);
     }
     getSnacks();
     getDrinks();
   }, []);
-
-  console.log('isLoading is ', isLoading);
 
   if (isLoading) {
     return <p>Loading &hellip;</p>;
@@ -68,7 +68,6 @@ export default App;
 
 //create Snack or Booze website
 //get tests running
-  //MenuItem.test.jsx (1.5 hours)
-  //App.test.jsx (2 hours)
+  //App.test.jsx (1.5 hours)
   //Submit
 

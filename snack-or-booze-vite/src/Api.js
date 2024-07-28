@@ -21,7 +21,9 @@ const BASE_API_URL = "http://localhost:8000";
 class SnackOrBoozeApi {
 
   static async getGoodies(type) {
+    console.log('starting getGoodies');
     const result = await axios.get(`${BASE_API_URL}/${type}`);
+    console.log('getgoodies Data returned');
     return result.data;
   }
 
