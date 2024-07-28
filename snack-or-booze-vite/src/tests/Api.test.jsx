@@ -1,39 +1,11 @@
 import SnackOrBoozeApi from '../Api';
 import '@testing-library/jest-dom/vitest';
 import axios from 'axios';
-import {beforeEach, test, vi, expect} from 'vitest';
+import {test, vi, expect} from 'vitest';
 
-
-
-test('gets snacks data', async () => {
-
-  vi.mock('axios');
-  axios.get.mockClear();
-  const snacks = {data: [    {
-        "id": "nachos",
-        "name": "Nachos",
-        "description": "An American classic!",
-        "recipe": "Cover expensive, organic tortilla chips with Cheez Whiz.",
-        "serve": "Serve in a hand-thrown ceramic bowl, garnished with canned black olives"
-      },
-      {
-        "id": "hummus",
-        "name": "Hummus",
-        "description": "Sure to impress your vegan friends!",
-        "recipe": "Purchase one container of hummus.",
-        "serve": "Place unceremoniously on the table, along with pita bread."
-      },
-      {
-        "id": "arugula-and-walnut-salad",
-        "name": "Arugula and Walnut Salad",
-        "description": "Tart and delicious.",
-        "recipe": "Mix arugula, toasted walnuts, and thinly-sliced Parmesan cheese. Dress with lemon and olive oil.",
-        "serve": "Place on tiny, precious little plates."
-      }]};
-  axios.get.mockResolvedValueOnce(snacks);
-
-  const results = await SnackOrBoozeApi.getGoodies('snacks');
-  expect(results.length).toBe(3);
+test('gets  data', async () => {
+  const results = await SnackOrBoozeApi.getGoodies('drinks');
+  expect(results.length).toBe(7);
 });
 
 test('adds data to database', async () => {

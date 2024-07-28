@@ -1,78 +1,100 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`matches snapshot 1`] = `
+exports[`it matches snapshot 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <section>
+      <section
+        class="col-md-8"
+      >
         <div
           class="card"
         >
           <div
-            class="card-body"
+            class="text-center card-body"
           >
             <div
-              class="font-weight-bold text-center card-title"
+              class="card-title"
             >
-              Nachos
+              <h5
+                class="font-weight-bold"
+              >
+                Welcome to Silicon Valley's premier dive cafe!
+              </h5>
             </div>
-            <p
-              class="font-italic card-text"
+            <ul
+              class="list-group"
             >
-              An American classic!
-            </p>
-            <p>
-              <b>
-                Recipe:
-              </b>
-               
-              Cover expensive, organic tortilla chips with Cheez Whiz.
-            </p>
-            <p>
-              <b>
-                Serve:
-              </b>
-               
-              Serve in a hand-thrown ceramic bowl, garnished with canned black olives
-            </p>
+              <a
+                href="/snacks"
+              >
+                <li
+                  class="list-group-item"
+                >
+                  Snacks: 
+                  5
+                </li>
+              </a>
+              <a
+                href="/drinks"
+              >
+                <li
+                  class="list-group-item"
+                >
+                  Drinks: 
+                  7
+                </li>
+              </a>
+            </ul>
           </div>
         </div>
       </section>
     </div>
   </body>,
   "container": <div>
-    <section>
+    <section
+      class="col-md-8"
+    >
       <div
         class="card"
       >
         <div
-          class="card-body"
+          class="text-center card-body"
         >
           <div
-            class="font-weight-bold text-center card-title"
+            class="card-title"
           >
-            Nachos
+            <h5
+              class="font-weight-bold"
+            >
+              Welcome to Silicon Valley's premier dive cafe!
+            </h5>
           </div>
-          <p
-            class="font-italic card-text"
+          <ul
+            class="list-group"
           >
-            An American classic!
-          </p>
-          <p>
-            <b>
-              Recipe:
-            </b>
-             
-            Cover expensive, organic tortilla chips with Cheez Whiz.
-          </p>
-          <p>
-            <b>
-              Serve:
-            </b>
-             
-            Serve in a hand-thrown ceramic bowl, garnished with canned black olives
-          </p>
+            <a
+              href="/snacks"
+            >
+              <li
+                class="list-group-item"
+              >
+                Snacks: 
+                5
+              </li>
+            </a>
+            <a
+              href="/drinks"
+            >
+              <li
+                class="list-group-item"
+              >
+                Drinks: 
+                7
+              </li>
+            </a>
+          </ul>
         </div>
       </div>
     </section>

@@ -21,20 +21,24 @@ function App() {
     //get the list of snacks from the API and set state appropriately
     async function getSnacks() {
       setIsLoading(true);
-      let snacks = await SnackOrBoozeApi.getGoodies('snacks');
-      setSnacks(snacks);
+      let loadSnacks = await SnackOrBoozeApi.getGoodies('snacks');
+      console.log('loadSnacks is ', loadSnacks);
+      setSnacks(loadSnacks);
+      console.log('snacks is ', snacks);
       setIsLoading(false);
     }
     //get the list of drinks from the API and set state appropriately
     async function getDrinks() {
       setIsLoading(true);
-      let drinks = await SnackOrBoozeApi.getGoodies('drinks');
-      setDrinks(drinks);
+      let loadDrinks = await SnackOrBoozeApi.getGoodies('drinks');
+      setDrinks(loadDrinks);
       setIsLoading(false);
     }
     getSnacks();
     getDrinks();
   }, []);
+
+  console.log('isLoading is ', isLoading);
 
   if (isLoading) {
     return <p>Loading &hellip;</p>;
@@ -64,8 +68,7 @@ export default App;
 
 //create Snack or Booze website
 //get tests running
-
-  //App.test.jsx
-  //Api.test.jsx
-  //MenuItem.test.jsx
+  //MenuItem.test.jsx (1.5 hours)
+  //App.test.jsx (2 hours)
+  //Submit
 

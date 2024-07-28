@@ -1,7 +1,8 @@
-import React, {useParams} from 'react';
+import React from 'react';
 import {render} from '@testing-library/react';
 import {expect, test, vi} from 'vitest';
 import MenuItem from '../MenuItem';
+import * as reactRouterDom from 'react-router-dom';
 import {MemoryRouter} from 'react-router-dom';
 
 const items = [
@@ -21,6 +22,15 @@ const items = [
       },
 ];
 
+vi.mock('react-router-dom', async (importOriginal) => {
+  const actual = await importOriginal();
+  return{
+    ...actual,
+    useParams: () => ({id: 'nachos'}),
+    Navigate: vi.fn(({to}) => (`Redirected to ${to}`)),
+  }
+});
+
 test('renders the MenuItem component', () => {
     render(
       <MemoryRouter>
@@ -34,40 +44,22 @@ test('matches snapshot', () => {
         <MenuItem items={items} cantFind='/snacks'/>
       </MemoryRouter>);
     expect(menuItem).toMatchSnapshot();
-})
+});
 
 test('displays the correct content if found', function() {
-  let mockParam = {id: 'nachos'};
-
-  vi.mock('react-router-dom', () => ({
-    ...vi.requireActual('react-router-dom'),
-    useParams: () => mockParam
-  }));
 
   const {getByText} = render(
     <MemoryRouter>
       <MenuItem items={items} cantFind='/snacks'/>
     </MemoryRouter>);
-  expect(getByText('Recipe: Cover expensive, organic tortilla chips with Cheez Whiz.')).toBeInTheDocument();
+  expect(getByText('Cover expensive, organic tortilla chips with Cheez Whiz.')).toBeInTheDocument();
 });
 
 test('redirects if item is not found', function() {
-  let mockParam = {id: 'chips'};
-
-  vi.mock('react-router-dom', () => ({
-    ...vi.requireActual('react-router-dom'),
-    useParams: () => mockParam
-  }));
-
-  vi.mock('react-router-dom', () => {
-    return {
-      Redirect: vi.fn(({to}) => `Redirected to ${to}`),
-    };
-  });
-
+  reactRouterDom.useParams = () => ({id: 'chips'});
   const {getByText} = render(
     <MemoryRouter>
       <MenuItem items={items} cantFind='/snacks'/>
     </MemoryRouter>);
   expect(getByText('Redirected to /snacks')).toBeInTheDocument();
-})
+});
